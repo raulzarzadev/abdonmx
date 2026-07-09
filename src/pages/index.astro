@@ -38,12 +38,63 @@ const mantra = 'MENTE × CUERPO × DISCIPLINA × RESULTADOS × ';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EcabMx | S. Abdon Marín</title>
+    <title>EcabMx | S. Abdon Marín — Entrenador de natación y triatlón</title>
     <meta
       name="description"
-      content="EcabMx — S. Abdon Marín, entrenador multidisciplinario. Mente, cuerpo, disciplina y resultados."
+      content="Entrena con S. Abdon Marín en Club Berimbau, Estado de México. Natación, triatlón y atletismo para todas las edades. Agenda tu clase en línea o a distancia."
     />
+    <link rel="canonical" href="https://abdon.mx/" />
+    <meta name="theme-color" content="#0a0d08" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://abdon.mx/" />
+    <meta property="og:title" content="EcabMx | S. Abdon Marín — Entrenador de natación y triatlón" />
+    <meta
+      property="og:description"
+      content="Natación, triatlón y atletismo para todas las edades en Club Berimbau, Estado de México. Agenda tu clase en línea."
+    />
+    <meta property="og:image" content="https://abdon.mx/assets/ecabmx-diseno.png" />
+    <meta property="og:image:width" content="863" />
+    <meta property="og:image:height" content="1823" />
+    <meta property="og:locale" content="es_MX" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="EcabMx | S. Abdon Marín — Entrenador de natación y triatlón" />
+    <meta
+      name="twitter:description"
+      content="Natación, triatlón y atletismo para todas las edades en Club Berimbau, Estado de México. Agenda tu clase en línea."
+    />
+    <meta name="twitter:image" content="https://abdon.mx/assets/ecabmx-diseno.png" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'ProfilePage',
+        url: 'https://abdon.mx/',
+        inLanguage: 'es-MX',
+        mainEntity: {
+          '@type': 'Person',
+          name: 'S. Abdon Marín',
+          alternateName: 'EcabMx',
+          jobTitle: 'Entrenador multidisciplinario',
+          description:
+            'Entrenador de natación, triatlón y atletismo. Formación y alto rendimiento para todas las edades. Entrenador Máster en el Estado de México, Club Berimbau.',
+          image: 'https://abdon.mx/assets/ecabmx-diseno.png',
+          url: 'https://abdon.mx/',
+          sameAs: ['https://www.instagram.com/ecab.mx'],
+          knowsAbout: ['Natación', 'Triatlón', 'Atletismo', 'Alto rendimiento deportivo'],
+          workLocation: {
+            '@type': 'Place',
+            name: 'Club Berimbau',
+            address: {
+              '@type': 'PostalAddress',
+              addressRegion: 'Estado de México',
+              addressCountry: 'MX',
+            },
+          },
+        },
+      })}
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -104,15 +155,25 @@ const mantra = 'MENTE × CUERPO × DISCIPLINA × RESULTADOS × ';
       class="mx-auto w-full max-w-[430px] lg:grid lg:max-w-[1060px] lg:grid-cols-[430px_minmax(360px,1fr)] lg:items-start lg:gap-14 lg:px-8 lg:py-14 xl:gap-20"
       aria-label="EcabMx enlaces"
     >
+      <h1 class="sr-only">
+        EcabMx — S. Abdon Marín, entrenador de natación, triatlón y atletismo en Club Berimbau,
+        Estado de México
+      </h1>
       <div
         class="relative lg:overflow-hidden lg:rounded-3xl lg:ring-1 lg:ring-white/10 lg:shadow-[0_40px_120px_-40px_rgb(183_255_0_/_0.25)]"
       >
-        <img
-          class="block h-auto w-full select-none"
-          src="/assets/ecabmx-diseno.png"
-          alt="EcabMx - S. Abdon Marín, entrenador multidisciplinario"
-          draggable="false"
-        />
+        <picture>
+          <source srcset="/assets/ecabmx-diseno.webp" type="image/webp" />
+          <img
+            class="block h-auto w-full select-none"
+            src="/assets/ecabmx-diseno.png"
+            alt="EcabMx - S. Abdon Marín, entrenador multidisciplinario, junto a la alberca de Club Berimbau con enlaces a Instagram, WhatsApp y agenda de clases"
+            width="863"
+            height="1823"
+            fetchpriority="high"
+            draggable="false"
+          />
+        </picture>
         {
           links.map((link) => (
             <a
@@ -128,6 +189,15 @@ const mantra = 'MENTE × CUERPO × DISCIPLINA × RESULTADOS × ';
           ))
         }
       </div>
+      <div class="sr-only">
+        <h2>Contacto y entrenamientos EcabMx</h2>
+        <ul>
+          <li>Instagram: @ecab.mx</li>
+          <li>WhatsApp: +52 55 3253 5233</li>
+          <li>Clases presenciales en Club Berimbau, Estado de México</li>
+          <li>Entrenamientos en línea: programas personalizados, seguimiento y resultados reales</li>
+        </ul>
+      </div>
 
       <section
         id="agenda"
@@ -136,9 +206,9 @@ const mantra = 'MENTE × CUERPO × DISCIPLINA × RESULTADOS × ';
       >
         <header class="hidden lg:block">
           <p class="text-xs font-bold tracking-[0.35em] text-[var(--acid)]">AGENDA EN LÍNEA</p>
-          <h1 class="mt-3 text-4xl font-black leading-none tracking-tight">
+          <h2 class="mt-3 text-4xl font-black leading-none tracking-tight">
             Reserva tu<br />clase<span class="text-[var(--acid)]">.</span>
-          </h1>
+          </h2>
           <p class="mt-4 max-w-sm text-sm font-medium leading-relaxed text-white/60">
             Elige un horario y entrena con S. Abdon Marín en Club Berimbau — natación, triatlón y
             atletismo para todas las edades.
