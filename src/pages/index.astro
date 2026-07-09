@@ -14,8 +14,9 @@ const links = [
   },
   {
     class: 'top-[67.2%]',
-    href: 'https://calendly.com/salvadorabdonm/30min',
+    href: '#agenda',
     label: 'Agendar clase EcabMx',
+    internal: true,
   },
   {
     class: 'top-[76.7%]',
@@ -57,14 +58,14 @@ const links = [
               link.class,
             ]}
             href={link.href}
-            target="_blank"
-            rel="noopener"
+            target={link.internal ? undefined : '_blank'}
+            rel={link.internal ? undefined : 'noopener'}
             aria-label={link.label}
           />
         ))
       }
 
-      <section class="px-4 pb-10" aria-label="Agenda de clases">
+      <section id="agenda" class="scroll-mt-4 px-4 pb-10" aria-label="Agenda de clases">
         <div
           data-nadamas-widget
           data-cliente="hJ3lwzAlTkQkaMev2ro8Of129d83"
