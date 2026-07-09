@@ -1,0 +1,68 @@
+---
+import '../styles/global.css';
+
+const links = [
+  {
+    class: 'top-[48.1%]',
+    href: 'https://www.instagram.com/ecab.mx?igsh=cDhpeGoycWcyNHhm&utm_source=qr',
+    label: 'Abrir Instagram EcabMx',
+  },
+  {
+    class: 'top-[57.8%]',
+    href: 'https://wa.me/525532535233',
+    label: 'Abrir WhatsApp EcabMx',
+  },
+  {
+    class: 'top-[67.2%]',
+    href: 'https://calendly.com/salvadorabdonm/30min',
+    label: 'Agendar clase EcabMx',
+  },
+  {
+    class: 'top-[76.7%]',
+    href: 'https://maps.app.goo.gl/T1rkvCFSEc2844om8?g_st=ic',
+    label: 'Abrir ubicación Club Berimbau',
+  },
+  {
+    class: 'top-[86.1%] w-[76%] h-[8.5%]',
+    href: 'https://wa.me/525532535233?text=Hola%20Abdon%2C%20me%20interesa%20recibir%20informaci%C3%B3n%20sobre%20entrenamientos%20en%20l%C3%ADnea%20EcabMx.',
+    label: 'Solicitar información sobre entrenamientos en línea',
+  },
+];
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcabMx | S. Abdon Marín</title>
+    <meta
+      name="description"
+      content="EcabMx — S. Abdon Marín, entrenador multidisciplinario. Mente, cuerpo, disciplina y resultados."
+    />
+  </head>
+  <body class="flex min-h-screen items-start justify-center bg-black font-sans">
+    <main class="relative mx-auto w-full max-w-[430px] bg-black" aria-label="EcabMx enlaces">
+      <img
+        class="block h-auto w-full select-none"
+        src="/assets/ecabmx-diseno.png"
+        alt="EcabMx - S. Abdon Marín, entrenador multidisciplinario"
+        draggable="false"
+      />
+      {
+        links.map((link) => (
+          <a
+            class:list={[
+              'absolute left-[5.7%] h-[7.1%] w-[56%] cursor-pointer rounded-3xl focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[#b7ff00]',
+              link.class,
+            ]}
+            href={link.href}
+            target="_blank"
+            rel="noopener"
+            aria-label={link.label}
+          />
+        ))
+      }
+    </main>
+  </body>
+</html>
