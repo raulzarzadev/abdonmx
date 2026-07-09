@@ -43,27 +43,29 @@ const links = [
     />
   </head>
   <body class="flex min-h-screen items-start justify-center bg-black font-sans">
-    <main class="relative mx-auto w-full max-w-[430px] bg-black" aria-label="EcabMx enlaces">
-      <img
-        class="block h-auto w-full select-none"
-        src="/assets/ecabmx-diseno.png"
-        alt="EcabMx - S. Abdon Marín, entrenador multidisciplinario"
-        draggable="false"
-      />
-      {
-        links.map((link) => (
-          <a
-            class:list={[
-              'absolute left-[5.7%] h-[7.1%] w-[56%] cursor-pointer rounded-3xl focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[#b7ff00]',
-              link.class,
-            ]}
-            href={link.href}
-            target={link.internal ? undefined : '_blank'}
-            rel={link.internal ? undefined : 'noopener'}
-            aria-label={link.label}
-          />
-        ))
-      }
+    <main class="mx-auto w-full max-w-[430px] bg-black" aria-label="EcabMx enlaces">
+      <div class="relative">
+        <img
+          class="block h-auto w-full select-none"
+          src="/assets/ecabmx-diseno.png"
+          alt="EcabMx - S. Abdon Marín, entrenador multidisciplinario"
+          draggable="false"
+        />
+        {
+          links.map((link) => (
+            <a
+              class:list={[
+                'absolute left-[5.7%] h-[7.1%] w-[56%] cursor-pointer rounded-3xl focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[#b7ff00]',
+                link.class,
+              ]}
+              href={link.href}
+              target={link.internal ? undefined : '_blank'}
+              rel={link.internal ? undefined : 'noopener'}
+              aria-label={link.label}
+            />
+          ))
+        }
+      </div>
 
       <section id="agenda" class="scroll-mt-4 px-4 pb-10" aria-label="Agenda de clases">
         <div
