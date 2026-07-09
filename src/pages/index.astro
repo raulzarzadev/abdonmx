@@ -29,6 +29,8 @@ const links = [
     label: 'Solicitar información sobre entrenamientos en línea',
   },
 ];
+
+const mantra = 'MENTE × CUERPO × DISCIPLINA × RESULTADOS × ';
 ---
 
 <!doctype html>
@@ -41,10 +43,70 @@ const links = [
       name="description"
       content="EcabMx — S. Abdon Marín, entrenador multidisciplinario. Mente, cuerpo, disciplina y resultados."
     />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&display=swap"
+    />
+    <style>
+      :root {
+        --acid: #b7ff00;
+        --ink: #0a0d08;
+      }
+      body {
+        font-family: 'Archivo', Arial, Helvetica, sans-serif;
+      }
+      /* Pool-lane texture: faint vertical lines across the desktop backdrop. */
+      .lanes {
+        background-image: repeating-linear-gradient(
+          90deg,
+          transparent 0,
+          transparent 138px,
+          rgb(255 255 255 / 0.04) 138px,
+          rgb(255 255 255 / 0.04) 140px
+        );
+      }
+      /* Vertical mantra ticker along the page edge. */
+      @keyframes mantra-scroll {
+        from {
+          transform: translateY(0);
+        }
+        to {
+          transform: translateY(-50%);
+        }
+      }
+      .mantra-track {
+        animation: mantra-scroll 60s linear infinite;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .mantra-track {
+          animation: none;
+        }
+      }
+    </style>
   </head>
-  <body class="flex min-h-screen items-start justify-center bg-black font-sans">
-    <main class="mx-auto w-full max-w-[430px] bg-black" aria-label="EcabMx enlaces">
-      <div class="relative">
+  <body class="lanes min-h-screen bg-[var(--ink)] text-white">
+    <!-- Edge mantra: the image's own manifesto, running down the margin (desktop only). -->
+    <aside
+      aria-hidden="true"
+      class="pointer-events-none fixed inset-y-0 left-6 hidden w-6 overflow-hidden xl:block"
+    >
+      <div
+        class="mantra-track whitespace-nowrap text-[11px] font-bold tracking-[0.5em] text-white/25 [writing-mode:vertical-rl]"
+      >
+        {mantra.repeat(4) + mantra.repeat(4)}
+      </div>
+    </aside>
+
+    <main
+      class="mx-auto w-full max-w-[430px] lg:grid lg:max-w-[1060px] lg:grid-cols-[430px_minmax(360px,1fr)] lg:items-start lg:gap-14 lg:px-8 lg:py-14 xl:gap-20"
+      aria-label="EcabMx enlaces"
+    >
+      <div
+        class="relative lg:overflow-hidden lg:rounded-3xl lg:ring-1 lg:ring-white/10 lg:shadow-[0_40px_120px_-40px_rgb(183_255_0_/_0.25)]"
+      >
         <img
           class="block h-auto w-full select-none"
           src="/assets/ecabmx-diseno.png"
@@ -55,7 +117,7 @@ const links = [
           links.map((link) => (
             <a
               class:list={[
-                'absolute left-[5.7%] h-[7.1%] w-[56%] cursor-pointer rounded-3xl focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[#b7ff00]',
+                'absolute left-[5.7%] h-[7.1%] w-[56%] cursor-pointer rounded-3xl focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[var(--acid)]',
                 link.class,
               ]}
               href={link.href}
@@ -67,8 +129,26 @@ const links = [
         }
       </div>
 
-      <section id="agenda" class="scroll-mt-4 px-4 pb-10" aria-label="Agenda de clases">
+      <section
+        id="agenda"
+        class="scroll-mt-4 px-4 pb-10 lg:sticky lg:top-14 lg:px-0 lg:pb-0"
+        aria-label="Agenda de clases"
+      >
+        <header class="hidden lg:block">
+          <p class="text-xs font-bold tracking-[0.35em] text-[var(--acid)]">AGENDA EN LÍNEA</p>
+          <h1 class="mt-3 text-4xl font-black leading-none tracking-tight">
+            Reserva tu<br />clase<span class="text-[var(--acid)]">.</span>
+          </h1>
+          <p class="mt-4 max-w-sm text-sm font-medium leading-relaxed text-white/60">
+            Elige un horario y entrena con S. Abdon Marín en Club Berimbau — natación, triatlón y
+            atletismo para todas las edades.
+          </p>
+          <div class="mb-6 mt-8 h-px w-full bg-gradient-to-r from-[var(--acid)]/60 via-white/15 to-transparent">
+          </div>
+        </header>
+
         <div
+          class="lg:overflow-hidden lg:rounded-2xl lg:ring-1 lg:ring-white/10"
           data-nadamas-widget
           data-cliente="hJ3lwzAlTkQkaMev2ro8Of129d83"
           data-theme="dark"
@@ -76,6 +156,11 @@ const links = [
         >
         </div>
         <script src="https://nadamas.app/widget.js" async is:inline></script>
+
+        <footer class="mt-8 hidden items-center gap-3 text-[11px] font-bold tracking-[0.35em] text-white/35 lg:flex">
+          <span class="h-px w-8 bg-[var(--acid)]/60"></span>
+          DISCIPLINA, TÉCNICA Y PROGRESO
+        </footer>
       </section>
     </main>
   </body>
