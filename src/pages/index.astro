@@ -44,7 +44,11 @@ const mantra = 'MENTE × CUERPO × DISCIPLINA × RESULTADOS × ';
       content="Entrena con S. Abdon Marín en Club Berimbau, Estado de México. Natación, triatlón y atletismo para todas las edades. Agenda tu clase en línea o a distancia."
     />
     <link rel="canonical" href="https://abdon.mx/" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="theme-color" content="#0a0d08" />
+    <meta name="author" content="S. Abdon Marín" />
+    <meta name="geo.region" content="MX-MEX" />
+    <meta name="geo.placename" content="Club Berimbau, Estado de México" />
     <meta property="og:type" content="profile" />
     <meta property="og:url" content="https://abdon.mx/" />
     <meta property="og:title" content="EcabMx | S. Abdon Marín — Entrenador de natación y triatlón" />
@@ -79,38 +83,140 @@ const mantra = 'MENTE × CUERPO × DISCIPLINA × RESULTADOS × ';
       is:inline
       set:html={JSON.stringify({
         '@context': 'https://schema.org',
-        '@type': 'ProfilePage',
-        url: 'https://abdon.mx/',
-        inLanguage: 'es-MX',
-        mainEntity: {
-          '@type': 'Person',
-          name: 'S. Abdon Marín',
-          alternateName: 'EcabMx',
-          jobTitle: 'Entrenador multidisciplinario',
-          description:
-            'Entrenador de natación, triatlón y atletismo. Formación y alto rendimiento para todas las edades. Entrenador Máster en el Estado de México, Club Berimbau.',
-          image: 'https://abdon.mx/og.jpg',
-          url: 'https://abdon.mx/',
-          sameAs: ['https://www.instagram.com/ecab.mx'],
-          knowsAbout: ['Natación', 'Triatlón', 'Atletismo', 'Alto rendimiento deportivo'],
-          workLocation: {
-            '@type': 'Place',
-            name: 'Club Berimbau',
+        '@graph': [
+          {
+            '@type': 'ProfilePage',
+            '@id': 'https://abdon.mx/#page',
+            url: 'https://abdon.mx/',
+            name: 'EcabMx | S. Abdon Marín — Entrenador de natación y triatlón',
+            inLanguage: 'es-MX',
+            mainEntity: { '@id': 'https://abdon.mx/#person' },
+            about: { '@id': 'https://abdon.mx/#person' },
+            isPartOf: { '@id': 'https://abdon.mx/#website' },
+            primaryImageOfPage: 'https://abdon.mx/og.jpg',
+          },
+          {
+            '@type': 'WebSite',
+            '@id': 'https://abdon.mx/#website',
+            url: 'https://abdon.mx/',
+            name: 'EcabMx',
+            inLanguage: 'es-MX',
+            publisher: { '@id': 'https://abdon.mx/#person' },
+          },
+          {
+            '@type': 'Person',
+            '@id': 'https://abdon.mx/#person',
+            name: 'S. Abdon Marín',
+            alternateName: 'EcabMx',
+            jobTitle: 'Entrenador multidisciplinario de natación, triatlón y atletismo',
+            description:
+              'Entrenador de natación, triatlón y atletismo. Formación y alto rendimiento para todas las edades. Entrenador Máster en el Estado de México, Club Berimbau.',
+            image: 'https://abdon.mx/og.jpg',
+            url: 'https://abdon.mx/',
+            telephone: '+52-55-3253-5233',
+            sameAs: ['https://www.instagram.com/ecab.mx'],
+            knowsLanguage: 'es-MX',
+            knowsAbout: [
+              'Natación',
+              'Triatlón',
+              'Atletismo',
+              'Alto rendimiento deportivo',
+              'Técnica de nado',
+              'Entrenamiento personalizado',
+            ],
+            worksFor: { '@id': 'https://abdon.mx/#business' },
+            workLocation: { '@id': 'https://abdon.mx/#business' },
+          },
+          {
+            '@type': ['LocalBusiness', 'SportsActivityLocation'],
+            '@id': 'https://abdon.mx/#business',
+            name: 'EcabMx — Entrenamiento con S. Abdon Marín',
+            description:
+              'Clases de natación, triatlón y atletismo para todas las edades en Club Berimbau, Estado de México. También entrenamientos en línea con programas personalizados.',
+            url: 'https://abdon.mx/',
+            image: 'https://abdon.mx/og.jpg',
+            telephone: '+52-55-3253-5233',
+            priceRange: '$$',
+            currenciesAccepted: 'MXN',
+            areaServed: [
+              { '@type': 'AdministrativeArea', name: 'Estado de México' },
+              { '@type': 'Country', name: 'México' },
+            ],
             address: {
               '@type': 'PostalAddress',
+              addressLocality: 'Club Berimbau',
               addressRegion: 'Estado de México',
               addressCountry: 'MX',
             },
+            hasMap: 'https://maps.app.goo.gl/T1rkvCFSEc2844om8',
+            sameAs: ['https://www.instagram.com/ecab.mx'],
+            employee: { '@id': 'https://abdon.mx/#person' },
+            hasOfferCatalog: {
+              '@type': 'OfferCatalog',
+              name: 'Entrenamientos EcabMx',
+              itemListElement: [
+                {
+                  '@type': 'Offer',
+                  itemOffered: {
+                    '@type': 'Service',
+                    name: 'Clases de natación',
+                    serviceType: 'Entrenamiento de natación',
+                    description:
+                      'Clases presenciales de natación para todas las edades: iniciación, técnica y alto rendimiento.',
+                    provider: { '@id': 'https://abdon.mx/#business' },
+                  },
+                },
+                {
+                  '@type': 'Offer',
+                  itemOffered: {
+                    '@type': 'Service',
+                    name: 'Entrenamiento de triatlón',
+                    serviceType: 'Entrenamiento de triatlón',
+                    description:
+                      'Preparación de triatlón: natación, ciclismo y carrera con planificación por objetivos.',
+                    provider: { '@id': 'https://abdon.mx/#business' },
+                  },
+                },
+                {
+                  '@type': 'Offer',
+                  itemOffered: {
+                    '@type': 'Service',
+                    name: 'Entrenamiento en línea',
+                    serviceType: 'Entrenamiento a distancia',
+                    description:
+                      'Programas personalizados a distancia con seguimiento continuo y ajustes por progreso.',
+                    provider: { '@id': 'https://abdon.mx/#business' },
+                  },
+                },
+              ],
+            },
           },
-        },
+        ],
       })}
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/ecabmx-diseno.webp"
+      type="image/webp"
+      fetchpriority="high"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://nadamas.app" />
+    {/* Fonts load async so they never block first paint; noscript keeps them for JS-less clients. */}
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&display=swap"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&display=swap"
+      />
+    </noscript>
     <style>
       :root {
         --acid: #b7ff00;
@@ -241,6 +347,55 @@ const mantra = 'MENTE × CUERPO × DISCIPLINA × RESULTADOS × ';
           <span class="h-px w-8 bg-[var(--acid)]/60"></span>
           DISCIPLINA, TÉCNICA Y PROGRESO
         </footer>
+      </section>
+
+      <section
+        class="border-t border-white/10 px-4 pb-16 pt-12 lg:col-span-2 lg:px-0 lg:pt-16"
+        aria-labelledby="sobre-titulo"
+      >
+        <p class="text-xs font-bold tracking-[0.35em] text-[var(--acid)]">ENTRENAMIENTO</p>
+        <h2 id="sobre-titulo" class="mt-3 text-3xl font-black leading-none tracking-tight lg:text-4xl">
+          Natación, triatlón y atletismo<br class="hidden lg:block" /> en el Estado de México
+        </h2>
+        <div class="mt-6 grid gap-10 text-sm font-medium leading-relaxed text-white/70 lg:grid-cols-3">
+          <div>
+            <h3 class="mb-2 text-base font-black text-white">Quién entrena</h3>
+            <p>
+              S. Abdon Marín es entrenador multidisciplinario y Entrenador Máster con base en Club
+              Berimbau, Estado de México. Trabaja con nadadores desde iniciación hasta alto
+              rendimiento, y con triatletas y corredores que preparan una competencia concreta.
+            </p>
+          </div>
+          <div>
+            <h3 class="mb-2 text-base font-black text-white">Qué incluye</h3>
+            <p>
+              Clases presenciales de natación para todas las edades, corrección de técnica de nado,
+              preparación de triatlón (natación, ciclismo y carrera) y atletismo. También hay
+              entrenamientos en línea: programas personalizados, seguimiento continuo y ajustes
+              según tu progreso.
+            </p>
+          </div>
+          <div>
+            <h3 class="mb-2 text-base font-black text-white">Cómo empezar</h3>
+            <p>
+              Reserva un horario en la
+              <a class="text-[var(--acid)] underline underline-offset-4" href="#agenda">agenda en línea</a>
+              o escribe por
+              <a
+                class="text-[var(--acid)] underline underline-offset-4"
+                href="https://wa.me/525532535233"
+                target="_blank"
+                rel="noopener">WhatsApp al +52 55 3253 5233</a
+              >. Para ver el día a día del club, sigue
+              <a
+                class="text-[var(--acid)] underline underline-offset-4"
+                href="https://www.instagram.com/ecab.mx"
+                target="_blank"
+                rel="noopener">@ecab.mx en Instagram</a
+              >.
+            </p>
+          </div>
+        </div>
       </section>
     </main>
   </body>
