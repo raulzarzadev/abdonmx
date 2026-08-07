@@ -121,12 +121,12 @@ const mantra = ['MENTE', 'CUERPO', 'DISCIPLINA', 'RESULTADOS'];
   </head>
   <body class="min-h-screen bg-[var(--ink)] text-white">
     <main class="mx-auto grid min-h-screen w-full max-w-[1180px] gap-0 lg:grid-cols-[minmax(400px,0.86fr)_minmax(500px,1.14fr)] lg:items-center lg:gap-14 lg:px-10 lg:py-10">
-      <section class="relative isolate flex min-h-[700px] flex-col justify-between overflow-hidden px-6 py-8 sm:px-10 lg:min-h-[850px] lg:rounded-[2rem] lg:px-12 lg:py-12" aria-labelledby="hero-title">
-        <img class="portrait absolute inset-0 -z-20 h-full w-full object-cover" src="/assets/abdon-portrait.jpg" alt="S. Abdon Marín, entrenador en una instalación deportiva" width="960" height="1280" fetchpriority="high" />
-        <div class="absolute inset-0 -z-10 bg-gradient-to-b from-black/80 via-black/20 to-black/85"></div>
-        <div class="absolute inset-0 -z-10 bg-gradient-to-r from-black/70 via-black/10 to-transparent"></div>
+      <section class="relative isolate flex min-h-[620px] flex-col justify-between overflow-hidden bg-[#11150f] px-6 py-8 sm:min-h-[700px] sm:px-10 lg:min-h-[850px] lg:rounded-[2rem] lg:px-12 lg:py-12" aria-labelledby="hero-title">
+        <img class="portrait absolute inset-0 z-0 h-full w-full object-cover" src="/assets/abdon-portrait.jpg" alt="S. Abdon Marín, entrenador en una instalación deportiva" width="960" height="1280" fetchpriority="high" />
+        <div class="absolute inset-0 z-10 bg-gradient-to-b from-black/80 via-black/20 to-black/85"></div>
+        <div class="absolute inset-0 z-10 bg-gradient-to-r from-black/70 via-black/10 to-transparent"></div>
 
-        <header>
+        <header class="relative z-20">
           <div class="mb-6 h-1 w-11 bg-[var(--acid)]"></div>
           <p class="text-5xl font-black tracking-[-0.08em] sm:text-6xl">Ecab<span class="text-[var(--acid)]">Mx</span></p>
           <div class="mt-6 h-px w-16 bg-[var(--acid)]"></div>
@@ -134,11 +134,11 @@ const mantra = ['MENTE', 'CUERPO', 'DISCIPLINA', 'RESULTADOS'];
           <p class="mt-1 text-base text-white/75 sm:text-lg">Entrenador personalizado de natación, atletismo y triatlón</p>
         </header>
 
-        <div class="my-12 border-l border-[var(--acid)] pl-8">
+        <div class="relative z-20 my-12 border-l border-[var(--acid)] pl-8">
           {mantra.map((word, index) => <p class:list={['text-lg tracking-[0.28em] leading-[1.9]', index % 2 ? 'text-[var(--acid)]' : 'text-white/85']}>{word}</p>)}
         </div>
 
-        <a class="group flex items-center gap-5 rounded-2xl border border-[var(--acid)]/80 bg-black/55 p-5 backdrop-blur-sm" href="https://wa.me/525532535233?text=Hola%20Abdon%2C%20me%20interesa%20recibir%20informaci%C3%B3n%20sobre%20entrenamientos%20en%20l%C3%ADnea%20EcabMx." target="_blank" rel="noopener">
+        <a class="group relative z-20 flex items-center gap-5 rounded-2xl border border-[var(--acid)]/80 bg-black/55 p-5 backdrop-blur-sm" href="https://wa.me/525532535233?text=Hola%20Abdon%2C%20me%20interesa%20recibir%20informaci%C3%B3n%20sobre%20entrenamientos%20en%20l%C3%ADnea%20EcabMx." target="_blank" rel="noopener">
           <span class="grid h-12 w-12 shrink-0 place-items-center rounded-lg border border-[var(--acid)] text-2xl text-[var(--acid)]" aria-hidden="true">↗</span>
           <span><strong class="block text-sm tracking-[0.18em]">ENTRENAMIENTOS EN LÍNEA</strong><span class="mt-1 block text-sm text-white/75">Programas personalizados, seguimiento y resultados reales.</span></span>
         </a>
